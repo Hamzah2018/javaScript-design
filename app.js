@@ -2,7 +2,13 @@ let myProduct = document.createElement("div");
 // console.log(myProduct);
 myProduct.setAttribute('class','product');
 // console.log(myProduct);
-
+myProduct.style.cssText = ` background-color: #eee;
+margin: auto;
+width: 200px;
+border-radius: 2px;
+padding: 5px;
+text-align: center;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;`;
 // element
 
 let productTitle = document.createElement("h3");
