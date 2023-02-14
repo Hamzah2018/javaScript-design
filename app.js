@@ -1,19 +1,50 @@
 let myHeader = document.createElement("header");
 let myNavbar = document.createElement("nav");
 let myUl = document.createElement("ul");
-let mylist = document.createElement("li");
-let myLink = document.createElement("a");
+let log = document.createElement("div");
+// let mylist = document.createElement("li");
+// let myLink = document.createElement("a");
 let myProduct = document.createElement("div");
 
 myNavbar.style.display ="flex";
-myNavbar.style.justifyContent ="center";
-let linkText = document.createTextNode("Home");
-myLink.style.textDecoration = "none";
+myNavbar.style.justifyContent ="space-around";
+myNavbar.style.alignItems ="center";
+// justify-items: center;
+myUl.style.display = "flex";
+myUl.style.justifyContent= "space-between";
+// let linkText = document.createTextNode("Home");
+// myLink.style.textDecoration = "none";
 myUl.style.listStyle = "none";
 myUl.style.display = "flex";
-myLink.appendChild(linkText);
-mylist.appendChild(myLink);
-myUl.appendChild(mylist);
+let listItem = ['home', 'Serves' , 'Contact'];
+// listItem.forEach(function(ele){
+//     ele.onload = function(){
+//         let mylist = document.createElement("li");
+//         let myLink = document.createElement("a");
+//         myLink.appendChild(document.createTextNode(ele));
+// }
+// });
+listItem.forEach(function(link){
+    // create link of menu
+    let li = document.createElement("li");
+    let a = document.createElement("a");
+    // create letter Text Node 
+    let theName = document.createTextNode(link);
+    // Append the link name to a ele and the a to link
+    a.appendChild(theName);
+    li.appendChild(a);
+    // Add Class on li
+    li.style.cssText  = 'margin:15px;text-transform: capitalize;';
+    // a.style.cssText  = 'a-box';
+    myUl.appendChild(li);
+});
+// let linkStyle = document.querySelectorAll
+
+// myLink.appendChild(linkText);
+// mylist.appendChild(myLink);
+let logName = document.createTextNode("JsDesign");
+log.appendChild(logName);
+myNavbar.appendChild(log);
 myNavbar.appendChild(myUl);
 myHeader.appendChild(myNavbar);
 
